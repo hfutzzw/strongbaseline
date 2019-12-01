@@ -1,0 +1,11 @@
+pip==19.1.1
+pytorch_ignite==0.1.2
+yacs==0.1.6
+torchvision==0.4.0
+h5py==2.9.0
+wheel==0.33.4
+scipy==1.2.1
+torch==1.2.0
+numpy==1.17.3
+ignite==1.1.0
+Pillow==6.2.1

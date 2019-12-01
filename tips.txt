@@ -1,0 +1,63 @@
+
+python tools/train.py --config_file='configs/seresnet_s_t_c.yml' MODEL.DEVICE_ID "('5')"
+
+python tools/train.py --config_file='configs/se_resnet50_s_t_c_MVB_woREA.yml' MODEL.DEVICE_ID "('5')"
+
+python tools/train.py --config_file='configs/resnet50_s_t_c_MVB.yml' MODEL.DEVICE_ID "('4')"
+
+python tools/train.py --config_file='configs/resnet50_ibn_a_s_t_c_MVB.yml' MODEL.DEVICE_ID "('9')"
+
+
+from torchvision import models
+models.resnet101(pretrained=True)
+
+Test with Euclidean distance using feature before BN without re-ranking
+python tools/test.py --config_file='configs/test_config.yml' MODEL.DEVICE_ID "('8')" DATASETS.NAMES "('market1501')" TEST.NECK_FEAT "('before')" TEST.FEAT_NORM "('no')" MODEL.PRETRAIN_CHOICE "('self')" TEST.WEIGHT "('./logs/sf_tri_center_market')"
+
+Test with Cosine distance using feature after BN without re-ranking
+python tools/test.py --config_file='configs/resnet50_s_t_c_MVB.yml' MODEL.DEVICE_ID "('8')" DATASETS.NAMES "('market1501')" TEST.NECK_FEAT "('after')" TEST.FEAT_NORM "('yes')" MODEL.PRETRAIN_CHOICE "('self')" TEST.WEIGHT "('./logs/sf_tri_center_market')"
+
+Test with Cosine distance using feature after BN with re-ranking
+python tools/test.py --config_file='configs/test_config.yml' MODEL.DEVICE_ID "('8')" DATASETS.NAMES "('market1501')" TEST.NECK_FEAT "('after')" TEST.FEAT_NORM "('yes')" MODEL.PRETRAIN_CHOICE "('self')" TEST.RE_RANKING "('yes')" TEST.WEIGHT "('./logs/sf_tri_center_market')"
+
+test_config.yml
+seresnet_s_t_c.yml
+
+python tools/test.py --config_file='configs/seresnet_s_t_c.yml' MODEL.DEVICE_ID "('6')" DATASETS.NAMES "('market1501')" TEST.NECK_FEAT "('before')" TEST.FEAT_NORM "('no')" MODEL.PRETRAIN_CHOICE "('self')" TEST.RE_RANKING "('no')" TEST.WEIGHT "('./logs/sf_tri_center_market_seres50/se_resnet50_model_40.pth')"
+
+##############################
+python tools/test.py --config_file='./configs/resnet50_s_t_c_MVB.yml' MODEL.DEVICE_ID "('8')" TEST.NECK_FEAT "('after')" TEST.FEAT_NORM "('yes')" MODEL.PRETRAIN_CHOICE "('self')" TEST.WEIGHT "('./logs/sf_tri_center_MVB_res50_woREA/resnet50_model_120.pth')"
+
+python tools/test.py --config_file='./configs/se_resnet50_s_t_c_MVB_woREA.yml' MODEL.DEVICE_ID "('8')" TEST.NECK_FEAT "('after')" TEST.FEAT_NORM "('yes')" MODEL.PRETRAIN_CHOICE "('self')" TEST.WEIGHT "('./logs/sf_tri_center_MVB_seres50_woREA/se_resnet50_model_120.pth')"
+
+
+############################
+TEST Script
+python tools/test.py --config_file='./configs/resnet50_ibn_a_s_t_c_MVB.yml' MODEL.DEVICE_ID "('8')" TEST.NECK_FEAT "('after')" TEST.FEAT_NORM "('yes')" MODEL.PRETRAIN_CHOICE "('self')"  TEST.RE_RANKING "('yes')" TEST.WEIGHT "('./logs/sf_tri_center_MVB_res50_ibn_a_woREA_ccsc_bs64/resnet50_ibn_a_model_280.pth')"
+python tools/test.py --config_file='./configs/resnet50_ibn_a_s_t_c_MVB.yml' MODEL.DEVICE_ID "('9')" TEST.NECK_FEAT "('after')" TEST.FEAT_NORM "('yes')" MODEL.PRETRAIN_CHOICE "('self')"  TEST.RE_RANKING "('yes')" TEST.WEIGHT "('./logs/sf_tri_center_MVB_res50_ibn_a_REA5_rhf_ccsc_2_bs64_trainall_final/resnet50_ibn_a_model_230.pth')"
+python tools/test.py --config_file='./configs/se_resnet50_s_t_c_MVB_woREA.yml' MODEL.DEVICE_ID "('9')" TEST.NECK_FEAT "('after')" TEST.FEAT_NORM "('yes')" MODEL.PRETRAIN_CHOICE "('self')"  TEST.RE_RANKING "('no')" TEST.WEIGHT "('./logs/s_t_c_m_MVB_seres50_woREA_womaterial_ccsc_wobias/se_resnet50_model_180.pth')"
+
+# 3rd submit result bash script 
+python tools/test.py --config_file='./configs/resnet50_ibn_a_s_t_c_MVB.yml' MODEL.DEVICE_ID "('9')" TEST.NECK_FEAT "('after')" TEST.FEAT_NORM "('yes')" MODEL.PRETRAIN_CHOICE "('self')"  TEST.RE_RANKING "('yes')" TEST.WEIGHT "('./logs/sf_tri_center_MVB_res50_ibn_a_REA5_rhf_ccsc_2_bs64_trainall_final/resnet50_ibn_a_model_230.pth')"
+
+# NAICN training script
+python tools/train.py --config_file='configs/resnet50_s_t_c_NAIC.yml' MODEL.DEVICE_ID "('8')"
+python tools/test.py --config_file='./configs/resnet50_s_t_c_NAIC_MGN.yml' MODEL.DEVICE_ID "('0')" TEST.NECK_FEAT "('after')" TEST.FEAT_NORM "('yes')" MODEL.PRETRAIN_CHOICE "('self')"  TEST.RE_RANKING "('yes')" TEST.WEIGHT "('./logs/sf_tri_center_NAIC_res50_ibn_a_true_mgn_neck_woREA_trainall/resnet50_ibn_a_model_400.pth')"
+
+python tools/test.py --config_file='./configs/resnet50_s_t_c_NAIC_MGN.yml' MODEL.DEVICE_ID "('0')" TEST.NECK_FEAT "('after')" TEST.FEAT_NORM "('yes')" MODEL.PRETRAIN_CHOICE "('self')"  TEST.RE_RANKING "('yes')" TEST.WEIGHT "('./logs/sf_tri_center_NAIC_res50_ibn_a_mgn_neck_woREA/resnet50_ibn_a_model_400.pth')"
+
+python tools/test.py --config_file='./configs/resnet50_s_t_c_NAIC_Pyramid.yml' MODEL.DEVICE_ID "('2')" TEST.NECK_FEAT "('after')" TEST.FEAT_NORM "('yes')" MODEL.PRETRAIN_CHOICE "('self')"  TEST.RE_RANKING "('yes')" TEST.WEIGHT "('./logs/sf_tri_center_NAIC_res50_ibn_a_pyramid_woREA_trainall/resnet50_ibn_a_model_360.pth')"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
