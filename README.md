@@ -4,7 +4,8 @@
 [初赛训练模型文件](https://pan.baidu.com/s/18VBTsjO31pHOcnbQVe1fSQ),
 [预训练模型文件](https://pan.baidu.com/s/1-2QoE_MKvJAb-6EzD0-YVQ)
 使用时请将初赛训练模型文件放置在./logs文件夹下，将预训练模型文件放置在./pretrained_models文件夹下
-# 四、项目运行办法
+
+# 项目运行办法
 
 
 ## 项目的文件结构
@@ -29,9 +30,11 @@
 		tools/train.py  训练流程定义
 		tools/test.py 测试流程定义
 		utils/re_ranking.py reranking实现文件
-	```
+```
+
 ## 项目的运行步骤
 首先需要确保数据集路径配置正确，数据集路径格式如下
+
 ```
 NAIC/trainset
        /train_set
