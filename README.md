@@ -52,7 +52,9 @@ NAIC/testsetB
 ```
 		     
 训练阶段：
+
 Step1. 修改实验参数配置 ```configs/resnet50_s_t_c_NAIC_Pyramid.yml```
+
 Step2. ```python tools/train.py --config_file='configs/resnet50_s_t_c_NAIC.yml' MODEL.DEVICE_ID "('8,9')"```
 
 
@@ -73,6 +75,6 @@ python tools/test.py --config_file='./configs/resnet50_s_t_c_NAIC_Pyramid.yml' M
 ```./submission_a.json，./submission_b.json```
 
 **由于Github上传文件大小限制，我们团队将初赛训练模型文件（包括权重参数）、预训练模型权重文件 存储在百度网盘**
-[初赛训练模型文件](https://pan.baidu.com/s/18VBTsjO31pHOcnbQVe1fSQ)
+[初赛训练模型文件](https://pan.baidu.com/s/18VBTsjO31pHOcnbQVe1fSQ),
 [预训练模型文件](https://pan.baidu.com/s/1-2QoE_MKvJAb-6EzD0-YVQ)
 在使用时，分别将初赛训练模型文件放置到```./logs```文件夹下，将预训练模型文件放置到```./pretrained_models```文件夹下
