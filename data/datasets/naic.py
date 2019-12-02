@@ -38,7 +38,7 @@ class NAICdataset(BaseImageDataset):
         # you need to first configure trainset path
         self.dataset_dir = osp.join(root, self.dataset_dir)
         self.train_dir = osp.join(self.dataset_dir, 'NAICtrainset')
-        self.test_dir = osp.join(self.dataset_dir,'NAICtestset')
+        self.test_dir = osp.join(self.dataset_dir,'NAICtestsetB')
 
         self.val_split_pid_number = 2
 

@@ -8,7 +8,7 @@ from .baseline import Baseline
 from .bfe import BFE
 from .mgn import MGN
 from .pyramid import Pyramid
-from .pyramid_bfe import PyramidBFE
+
 
 def build_model(cfg, num_classes):
     # if cfg.MODEL.NAME == 'resnet50':

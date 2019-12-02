@@ -68,6 +68,7 @@ TEST:
   FEAT_NORM: 'yes'
 
 # OUTPUT_DIR: "/home/haoluo/log/gu/reid_baseline_review/Opensource_test/market1501/Experiment-all-tricks-tri_center-256x128-bs16x4-warmup10-erase0_5-labelsmooth_on-laststride1-bnneck_on-triplet_centerloss0_0005"
-OUTPUT_DIR: './logs/sf_tri_center_NAIC_res50_ibn_a_pyramid_woREA_bfe'
+OUTPUT_DIR: './logs/sf_tri_center_NAIC_res50_ibn_a_pyramid_woREA'
+
 
 
