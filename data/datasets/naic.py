@@ -35,6 +35,7 @@ class NAICdataset(BaseImageDataset):
     def __init__(self, root='/home/hzr/bag_of_tricks/reid-strong-baseline/data/', verbose=True, **kwargs):
         super(NAICdataset, self).__init__()
         self.root = root
+        # you need to first configure trainset path
         self.dataset_dir = osp.join(root, self.dataset_dir)
         self.train_dir = osp.join(self.dataset_dir, 'NAICtrainset')
         self.test_dir = osp.join(self.dataset_dir,'NAICtestset')
@@ -42,7 +43,7 @@ class NAICdataset(BaseImageDataset):
         self.val_split_pid_number = 2
 
         # use validation testset from trainset
-        use_split_testset = False
+        use_split_testset = True
 
         train_set, test_query_set,test_gallery_set = \
             self.read_annotations_train(osp.join(self.train_dir, 'train_list.txt'),self.val_split_pid_number)
