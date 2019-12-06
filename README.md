@@ -55,7 +55,7 @@ NAIC/testsetB
 
 Step1. 修改实验参数配置 ```configs/resnet50_s_t_c_NAIC_Pyramid.yml```
 
-Step2. ```python tools/train.py --config_file='configs/resnet50_s_t_c_NAIC.yml' MODEL.DEVICE_ID "('8,9')"```
+Step2. ```python tools/train.py --config_file='configs/resnet50_s_t_c_NAIC_Pyramid.yml' MODEL.DEVICE_ID "('8,9')"```
 
 
 
