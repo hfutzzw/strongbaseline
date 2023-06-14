@@ -1,4 +1,4 @@
-修了一些bug。
+修了一些bug
 **由于Github上传文件大小限制，我们团队将初赛的训练模型文件（包括权重参数）、预训练模型权重文件 存储在百度网盘**
 链接如下：
 [初赛训练模型文件](https://pan.baidu.com/s/18VBTsjO31pHOcnbQVe1fSQ),
